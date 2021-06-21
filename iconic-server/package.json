@@ -1,0 +1,28 @@
+{
+  "name": "iconic-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_PATH=./build node build/server.js",
+    "build": "tsc -p .",
+    "dev": "ts-node-dev --respawn --transpile-only server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node-fetch": "^2.5.10",
+    "abort-controller": "^3.0.0",
+    "express": "^4.17.1",
+    "htmlparser2": "^6.1.0",
+    "node-fetch": "^2.6.1",
+    "p-limit": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.12",
+    "@types/node": "^15.12.4",
+    "@types/tiny-async-pool": "^1.0.0",
+    "ts-node-dev": "^1.1.6"
+  }
+}
