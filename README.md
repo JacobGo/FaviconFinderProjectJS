@@ -1,5 +1,7 @@
 # Iconic: Favicon Finder
 
+> [Live Demo deployed to Digital Ocean](https://favicon-finder-project-js-qrrz2.ondigitalocean.app/)
+
 Scrapes the first 1,000 domains of the Alexa top million domains, finds their favicon URL, and saves the results to a CSV.
 
 CSV workflows are done in-browser, see `useParseDomainList` and `DownloadList`. Favicon scraping is done on the server with results dynamically streamed over as individual JSON objects, see `useFetchFavicons`.
@@ -10,8 +12,21 @@ Note: I initially stored the favicons in memory on the server until all the requ
 
 ### Server: `/iconic-server/README.md`
 
+## Deployment
+
+Manual:
+
+```
+docker build . -t jacgoldman/iconic
+docker run -it -p 8000:8000  jacgoldman/iconic
+```
+
+Digital Ocean
+
+Import this repo to Apps.
+
 ## Notes
 
 - Definitely need tests for server logic given more time.
-- How can I share types between server and client?
-- Why am I bottlenecked when concurrently fetching favicons?
+- Best way to share types between server and client?
+- Why do I get bottlenecked when concurrently fetching favicons? Throttling? Ratelimiting?
